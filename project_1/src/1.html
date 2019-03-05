@@ -2,18 +2,27 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Next Page</title>
+    <title>Handle User input</title>
 </head>
 <body>
 
 <div id="app">
-    Fill the field: 
+  <h4>User Form</h4>
+    Email: 
     <br/>
-    <input type="text" v-on:input="changeName">
-    <br>
-    <h1>Privet {{ name }}</h1>
+    <input type="text" v-on:input="changeEmail">
+    <br/>
+    Password:
+    <br/>
+    <input type="text" v-on:input="changePassword">
+    <br/>
+    <h3>Your email is  {{ email }}</h3>
+    <br/>
+    <h3>Your password is  {{ password }}</h3>
 </div>
 <a  href="index.html">Main Page</a>
+<br/>
+<a  href="2.html">Next Page</a>
 
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
 <script>
@@ -21,11 +30,15 @@
     new Vue({
       el: '#app',
       data: {
-        name: 'Armenia!'
+        email: '',
+        password: ''
       },
       methods: {
-        changeName: function(event) {
-          this.name = event.target.value;
+        changeEmail: function(event) {
+          this.email = event.target.value;
+        },
+        changePassword: function(event){
+          this.password = event.target.value;
         }
       }
     })
