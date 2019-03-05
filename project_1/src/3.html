@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Counter 2</title>
+</head>
+<body>
+
+<div id="app">
+  <h4>Creating Counter {{ counter }}</h4>
+  
+  <button @click="riseCounter">Increase count</button>
+  <hr/>
+
+<h2 v-on:mouseover="onHover">Second counter {{ counter2 }}</h2>
+  
+</div>
+<a  href="index.html">Main Page</a>
+<br/>
+<a  href="2.html">Prev Page</a>
+<br/>
+<a  href="4.html">Next Page</a>
+
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+<script>
+
+    new Vue({
+        el: '#app',
+        data: {
+          counter: 0,
+          counter2: 1,
+
+        },
+        methods: {
+            riseCounter: function(){
+                this.counter++
+            },
+            onHover: function(event){
+                event.target.style.color = 'red'
+                this.counter2++
+            }
+
+        }
+     
+    })
+
+</script>
+</body>
+</html>
