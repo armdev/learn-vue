@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Counter with params!!!</title>
+    <title>Counter with colors and reset</title>
 </head>
 <body>
 
@@ -10,14 +10,19 @@
   <h4>{{ title }} {{ counter }}</h4>
   
    <button v-on:click="riseCounter(5, 'Increased by 5', $event)">In each click + 5</button>
+
+   <button v-on:click="riseCounter(10, 'Increased by 10', $event)">In each click + 10</button>
+
+   <button v-on:click="resetCounter('Counter reset', $event)">Reset?</button>
+ 
  
 </div>
 <br/>
 <a  href="index.html">Main Page</a>
 <br/>
-<a  href="3.html">Prev Page</a>
+<a  href="4.html">Prev Page</a>
 <br/>
-<a  href="5.html">Next Page</a>
+<a  href="6.html">Next Page</a>
 
 <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
 <script>
@@ -34,6 +39,20 @@
                 this.counter += num,
                 this.title = str
 
+                if(num === 5){
+                    event.target.style.color='red'
+                }
+
+                if(num === 10){
+                    event.target.style.color='green'
+                }
+
+            },
+
+            resetCounter: function(str, event){
+                this.counter = 0
+                this.title = str
+                event.target.style.color='blue'
             }
             
         }
