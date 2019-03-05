@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Events 2</title>
+</head>
+
+<body>
+
+    <div id="app">
+
+        Lazy:
+
+        <input type="text" v-model.lazy="inputValue">
+        <h2>{{ inputValue }}</h2>
+
+
+        Not lazy:
+
+        <input type="text" v-model="inputValue1">
+        <h2>{{ inputValue1 }}</h2>
+
+
+    </div>
+    <br />
+    <a href="index.html">Main Page</a>
+    <br />
+    <a href="8.html">Prev Page</a>
+    <br />
+    <a href="10.html">Next Page</a>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <script>
+
+        new Vue({
+            el: '#app',
+            data: {
+                inputValue: 'Initial value(click outside after changing input)',
+                inputValue1: 'Initial value'
+            }
+        })
+
+    </script>
+</body>
+
+</html>
