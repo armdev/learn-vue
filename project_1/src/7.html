@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Events 2</title>
+</head>
+
+<body>
+
+    <div id="app">
+
+        <h2>
+            <a href="http://github.com" target="_blank" v-on:click.prevent="">Github, click will be preevent</a>
+        </h2>
+
+        <h2 v-on:mousemove="handleMouseMove">
+            X: {{ x }} \ Y: {{ y }}
+            <span v-on:mousemove.stop="">Do not touch</span>
+        </h2>
+
+        <input type="text" v-on:keyup.enter.space="alertValue">
+
+    </div>
+    <br />
+    <a href="index.html">Main Page</a>
+    <br />
+    <a href="6.html">Prev Page</a>
+    <br />
+    <a href="8.html">Next Page</a>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.13/dist/vue.js"></script>
+    <script>
+
+        new Vue({
+            el: '#app',
+            data: {
+                x: 0,
+                y: 0
+
+            },
+            methods: {
+                handleMouseMove: function (event) {
+                    this.x = event.clientX
+                    this.y = event.clientY                  
+                },
+                alertValue: function (event) {
+                    alert(event.target.value)
+                }
+            }
+
+        })
+
+    </script>
+</body>
+
+</html>
